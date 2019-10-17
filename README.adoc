@@ -1,0 +1,57 @@
+= SFTP to S3 sync
+Ingo Walz <ingo.walz@gmail.com>
+v0.1, 2019-10-17
+:toc:
+:allow-uri-read:
+
+== General information
+Wrapper of rclone. Configuration via environment variables and supposed to run in containers.
+
+== Environment variables
+[cols="1,1,2", options="header"] 
+.Environment Variables
+|===
+|Name
+|Default value
+|Description
+
+|S3_ACCESS_KEY_ID
+|None
+|Access key for the S3 endpoint
+
+|S3_SECRET_ACCESS_KEY
+|None
+|Secret for the S3 endpoint
+
+|S3_REGION
+|us-east-1
+|The region of the S3 endpoint
+
+|S3_ENDPOINT
+|None
+|The URL of the S3 endpoint
+
+|S3_ENV_AUTH
+|false
+|Set to false if no session token is needed
+
+|S3_LOCATION_CONSTRAINT
+|us-east-1
+|must be set to match the Region. Used when creating buckets only.
+
+|S3_ACL
+|private
+|Canned ACL used when creating buckets and/or storing objects in S3. Private: Owner gets FULL_CONTROL. No one else has access rights (default).
+
+|SFTP_HOST
+|None
+|The hostname of the S3 server
+
+|SFTP_USER
+|None
+|SFTP User for the configured endpoint
+
+|SFTP_PASSWORD
+|None
+|SFTP Password for the configured endpoint
+|===
